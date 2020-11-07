@@ -1,0 +1,73 @@
+local LightSpeed = 100 --export: Landing light blinking speed. Lower numbers are faster.
+
+if hover.distance() >= 0 then 
+    unit.setTimer('Lights',math.sqrt(hover.distance())/900*LightSpeed)
+
+ 
+    if lights5 then 
+        if lights1.getState() == 1 then 
+            lights2.activate()
+            lights1.deactivate()
+            elseif lights2.getState() == 1 then
+            lights3.activate()
+            lights2.deactivate()
+            elseif lights3.getState() == 1 then
+            lights4.activate()
+            lights3.deactivate()
+            elseif lights4.getState() == 1 then
+            lights5.activate()
+            lights4.deactivate()
+            else
+            lights1.activate()
+            lights5.deactivate() 
+        end
+    elseif lights4 then
+        if lights1.getState() == 1 then 
+            lights2.activate()
+            lights1.deactivate()
+            elseif lights2.getState() == 1 then
+            lights3.activate()
+            lights2.deactivate()
+            elseif lights3.getState() == 1 then
+            lights4.activate()
+            lights3.deactivate()
+            else
+            lights1.activate()
+            lights4.deactivate() 
+        end 
+    elseif lights3 then
+         if lights1.getState() == 1 then 
+            lights2.activate()
+            lights1.deactivate()
+            elseif lights2.getState() == 1 then
+            lights3.activate()
+            lights2.deactivate()
+            else
+            lights1.activate()
+            lights3.deactivate()
+        end 
+    elseif lights2 then
+        if lights1.getState() == 1 then 
+            lights2.activate()
+            lights1.deactivate()
+            else
+            lights1.activate()
+            lights2.deactivate()
+        end 
+    else  
+        if lights1.getState() == 1 then 
+            lights1.deactivate()
+        else 
+            lights1.activate()
+        end
+    end   
+end
+    
+if hover.distance() < 0 then
+ unit.setTimer('Lights',1)
+ if lights1 then lights1.deactivate() end
+ if lights2 then lights2.deactivate() end
+ if lights3 then lights3.deactivate() end
+ if lights4 then lights4.deactivate() end
+ if lights5 then lights5.deactivate() end
+end
