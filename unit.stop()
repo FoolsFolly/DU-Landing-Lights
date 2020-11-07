@@ -1,0 +1,7 @@
+--Create the unit.stop() filter if it does not already exist, and append the following text at the end.
+
+if lights1 then lights1.deactivate() end
+if lights2 then lights2.deactivate() end
+if lights3 then lights3.deactivate() end
+if lights4 then lights4.deactivate() end
+if lights5 then lights5.deactivate() end
