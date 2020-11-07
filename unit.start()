@@ -1,0 +1,3 @@
+--Append the following at the end of unit.start()
+
+unit.setTimer('Lights',1)
