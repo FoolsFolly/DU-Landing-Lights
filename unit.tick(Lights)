@@ -1,3 +1,6 @@
+--In the unit slot, create the tick(Lights) filter, and fill it with the following script.
+
+
 local LightSpeed = 100 --export: Landing light blinking speed. Lower numbers are faster.
 
 if hover.distance() >= 0 then 
